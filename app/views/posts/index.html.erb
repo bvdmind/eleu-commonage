@@ -1,0 +1,6 @@
+<p style="color: green"><%= notice %></p>
+
+<% @posts.each do |post| %>
+  <%= render post %>
+  <%= link_to "Show this post", post %>
+<% end %>

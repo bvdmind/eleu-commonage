@@ -1,0 +1,28 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <%= link_to "ELEU. COMMONAGE", root_path, class: "navbar-item" %>
+  </div>
+    
+  <div id="navbar" class="navbar-menu">
+    <div class="navbar-start">
+        <a class="navbar-item">
+          About
+        </a>
+        <a class="navbar-item">
+          Rousurces
+        </a>
+        <a class="navbar-item">
+          Contact
+        </a>
+    </div>
+  </div>
+  
+  <div class="navbar-end">
+    <div class="navbar-item">
+      <div class="buttons">
+        <%= link_to "Sign up", new_user_registration_path, class: "button is-primary" %>
+        <%= link_to "Log in", new_user_session_path, class: "button is-light" %>
+      </div>
+    </div>
+  </div>
+</nav>

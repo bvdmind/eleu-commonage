@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Commonage</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <div class="columns">
+      <div class="column">
+        <% if user_signed_in? %>
+          <%= render "layouts/navbar_signed_in" %>
+        <% else %>
+          <%= render "layouts/navbar_signed_out" %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="column"></div>
+    <div class="column"></div>
+
+    <div class="container is-max-widescreen">
+      <div class="hero is-full-height>
+        <div class="column">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+
+    <%= render "layouts/footer" %>
+
+  </body>
+</html>
