@@ -1,4 +1,24 @@
+<figure class="image is-128x128">
+    <%= image_tag @user.profile_pic, class: 'is-rounded' %>
+    
+    <% if @user.admin? %>
+        <div class="icon-text">
+            <span class="icon has-text-info">
+                <i class="fas fa-info-circle"></i>
+            </span>
+            <span>Admin</span>
+        </div>
+    <% end %>
+</figure>
 
-<%= @user.first_name %>
-<%= @user.last_name %>
-<%= @user.email %>
+<div class="column"></div>
+
+<div class="box">
+    <%= @user.first_name %>
+    <%= @user.last_name %>
+    <br>
+    <%= @user.email %>
+</div>
+
+
+<%= link_to "Edit Profile", edit_user_registration_path %>

@@ -1,0 +1,5 @@
+
+<%= form_with(model: [ @post, @post.comments.build ], local: true) do |form| %>
+  <%= form.text_area :content, placeholder: 'Add a comment...' %>
+  <%= form.submit 'Post Comment', class: 'button is-primary' %>
+<% end %>

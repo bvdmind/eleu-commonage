@@ -1,6 +1,17 @@
-<p style="color: green"><%= notice %></p>
-
-<% @posts.each do |post| %>
-  <%= render post %>
-  <%= link_to "Show this post", post %>
-<% end %>
+<div class="container">
+  <% @posts.each do |post| %>
+    <div class="box">
+      <article class="media">
+        <div class="media-content">
+          <div class="content">
+            <%= render post %>
+          </div>
+          <nav class="level is-mobile">
+            <div class="level-left">
+            </div>
+          </nav>
+        </div>
+      </article>
+    </div>
+  <% end %>
+</div>
