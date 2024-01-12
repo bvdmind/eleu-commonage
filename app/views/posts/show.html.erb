@@ -2,12 +2,20 @@
 
 <%= render @post %>
 
-<h2>Comments</h2>
-  <% @post.comments.each do |comment| %>
-    <p><strong><%= comment.user.first_name + " " + comment.user.last_name %>:</strong> <%= comment.content %></p>
-  <% end %>
+<% if @comments.any? %>
+  <div class="box">
+    <% @post.comments.each do |comment| %>
+      <%= image_tag comment.user.profile_pic, class: "image is-24x24 is-rounded"  %>
+      <%= comment.user.first_name + " " + comment.user.last_name %>:</strong> <%= comment.content %>
+    <% end %>
+  </div>
+<% end %>
 
-<%= render 'comments/form' %>
+<div class="column"></div>
+
+<div class="box">
+  <%= render 'comments/form' %>
+</div>
 
 <div>
   <%= link_to "Edit this post", edit_post_path(@post) %> |
